@@ -1,0 +1,657 @@
+
+* {
+  box-sizing: border-box;
+  text-align: right;
+  font-family: "myFont";
+  font-size: 20px;
+}
+
+
+
+
+/* כללי*/
+.background {
+  background-color: #ED7E28;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+}
+
+li a:hover {
+  color: #ED7E28;
+}
+
+.atherNav a {
+  color: white;
+}
+
+.atherNav a:hover {
+  color: black;
+}
+
+#mySidenav a {
+  display: none;
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 10px;
+  width: 100px;
+  text-decoration: none;
+  text-align: left;
+  color: #ED7E28;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+#about {
+  top: 20px;
+  background-color: white;
+}
+
+#blog {
+  top: 80px;
+  background-color: white;
+}
+
+#projects {
+  top: 140px;
+  background-color: white;
+}
+
+#contact {
+  top: 200px;
+  background-color: white;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+} 
+.dropdown-content a {
+  float: none;
+  display: block; 
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.title {
+
+  font-family: "myFontTitle";
+  font-size: 37px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.orang {
+  color: #ED7E28;
+}
+
+.black {
+  color: black;
+
+}
+
+.white {
+  color: white;
+
+}
+
+.header {
+  margin: 0.5em;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+
+.botton,
+.bottonColorWhite a {
+
+  border-radius: 80px 80px 80px 80px;
+  padding: 0.5em;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #ED7E28 !important;
+}
+
+.bottonColorOrabge {
+  background-color: #ED7E28;
+  color: white;
+}
+
+.botton:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.logoColor {
+  flex-grow: 2;
+}
+
+.logoColor>img {
+  height: 15vh;
+}
+
+.nameSheet {
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: right;
+  margin: 1em;
+  margin-top: 2em;
+}
+/* צאט */
+.fixed {
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+}
+
+.whats {
+  position: relative;
+  display: inline-block;
+}
+
+.whats .whatstext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.whats .whatstext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.whats:hover .whatstext {
+  visibility: visible;
+  opacity: 1;
+}
+/* footer */
+
+footer {
+  border-top: 4px dashed #ED7E28;
+  margin-bottom: 1em;
+}
+
+.footerfoo {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+
+}
+/* כפתור שלח */
+.btn {
+  --c: white;
+  color: var(--c);
+  border: 0;
+  border-radius: 1em;
+  width: 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  height: 2rem;
+  background: #ED7E28;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.btn span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.05s);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: #ED7E28;
+  background: #ED7E28;
+}
+
+.btn:hover span {
+  transform: translateY(0) scale(2);
+}
+
+.btn span:nth-child(1) {
+  --n: 1;
+}
+
+.btn span:nth-child(2) {
+  --n: 2;
+}
+
+.btn span:nth-child(3) {
+  --n: 3;
+}
+
+.btn span:nth-child(4) {
+  --n: 4;
+}
+
+.pngDiv {
+
+  background-image: url(image/double-exposure-image-many-business-people-2.jpg);
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
+input[type=email],
+input[type=text],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #ffff;
+  color: #ED7E28;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  color: black;
+}
+
+footer input[type=submit] {
+  background-color: #ED7E28;
+  color: white;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* דף הבית */
+.why {
+  padding-bottom: 1em;
+}
+
+.element {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 0.5em;
+  padding: 1em;
+}
+
+.elementCube {
+  display: inline-block;
+  border-radius: 18px 18px 18px 18px;
+  background-color: white;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.elementP {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.findWorker {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#worker {
+  height: 100vh;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+
+.num {
+  color: white;
+  font-size: 45px;
+
+  font-weight: 600;
+  text-align: center;
+}
+/* הפעלת האנימציה */
+
+#spin:after {
+  content: "";
+  animation: spin 3s linear infinite;
+}
+
+/*צור קשר*/
+
+.form {
+  border-radius: 5px;
+  background-color: #ED7E28;
+  padding: 20px;
+
+
+}
+
+.contact {
+  display: flex;
+  gap: 5em;
+  margin: 2em;
+  justify-content: center;
+}
+
+
+/* אודות*/
+.aboute {
+  margin: 4em;
+
+}
+
+.customers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1em;
+
+}
+
+.cus {
+  padding: 2em;
+}
+
+/* סניפים*/
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay/* כאשר עוברים על התמונה */ {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay>img {
+  width: 100%;
+  height: 100%;
+}
+
+.place>img {
+  width: 100%;
+  height: 100%;
+}
+
+.branchs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.branch {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40vw;
+  height: 44vh;
+  margin: 2em;
+}
+
+
+.phone,
+.place {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+/*מחפש עבודה*/
+
+.find {
+  background-color: gray;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#myfile {
+  position: absolute;
+  right: 2em;
+}
+/* גופן נתמך בכל הדפדפנים */
+@font-face {
+  font-family: 'myFont';
+  font-weight: 400;
+  src: url('fonts/OpenSansHebrewCondensed-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'myFontTitle';
+  font-weight: 400;
+  src: url('fonts/OpenSansHebrewCondensed-Bold.woff2') format('woff2');
+}
+
+/*אנימציות*/
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    content: "?עבודה";
+  }
+
+  100% {
+    content: "?עובדים";
+  }
+}
+/* רספונסיביות */
+@media screen and (max-width: 888px) {
+
+  /* כללי */
+  /* סוגר את התפריט למעלה */
+  .header>nav,.header>span {
+    display: none;
+  }
+  #mySidenav a {
+    display: inline;
+  }
+
+  /* אודות-שינוי פריסה של הלוקוחות */
+  .customers {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 870px) {
+
+  /* דף הבית */
+  .findWorker {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 813px) {
+
+  /* דף הבית למה דווקא אנחנו*/
+  .element {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* צור קשר */
+  .contact {
+    gap: 3em;
+    flex-direction: column-reverse;
+  }
+
+  /* footer */
+  footer>div>div {
+    display: none;
+    /*הטופס אינו מוצג*/
+  }
+}
+
+@media screen and (max-width: 740px) {
+  /* אודות */
+  .customers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 685px) {
+
+  .image>h2 {
+    font-size: 28px;
+  }
+
+  #worker {
+    height: auto;
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 513px) {
+  .customers {
+    grid-template-columns: 1fr;
+  }
+
+}
